@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 To 12 Guide | Expert Tuition Classes</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #6C63FF;
+  --orange: #FF9800;
+  --light: #f9f9fb;
+  --dark: #1A1A1A;
+  --white: #ffffff;
+}
+body.dark {
+  --light: #181818;
+  --white: #222;
+  --dark: #f9f9fb;
+}
+
+* {box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
+body {
+  font-family:'Poppins',sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  transition:background 0.4s,color 0.4s;
+}
+
+/* Navbar */
+nav {
+  position:sticky;top:0;
+  background:var(--white);
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 20px;z-index:100;
+}
+.logo {font-weight:700;font-size:1.4rem;color:var(--purple);}
+nav ul {display:flex;list-style:none;gap:20px;}
+nav ul li a {
+  color:var(--dark);text-decoration:none;font-weight:600;position:relative;
+}
+nav ul li a::after {
+  content:'';position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--orange);transition:width 0.3s;
+}
+nav ul li a:hover::after {width:100%;}
+
+.menu-toggle{display:none;font-size:26px;color:var(--purple);background:none;border:none;cursor:pointer;}
+.toggle{
+  background:var(--orange);color:white;border:none;
+  padding:8px 14px;border-radius:20px;cursor:pointer;
+  font-weight:600;transition:transform 0.3s;
+}
+.toggle:hover{transform:scale(1.05);}
+
+/* Hero Section */
+.hero{
+  background:linear-gradient(rgba(108,99,255,0.85),rgba(108,99,255,0.85)),
+  url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1500&q=80')center/cover;
+  color:white;text-align:center;padding:120px 20px;
+}
+.hero h1{font-size:2.6rem;margin-bottom:10px;}
+.hero p{font-size:1.1rem;margin-bottom:20px;}
+.hero .btn{
+  background:var(--orange);color:white;padding:12px 22px;
+  border-radius:6px;text-decoration:none;font-weight:700;
+  transition:transform 0.3s;
+}
+.hero .btn:hover{transform:scale(1.05);}
+
+/* Sections */
+section{padding:60px 20px;max-width:1100px;margin:auto;text-align:center;}
+h2{color:var(--purple);font-size:2rem;margin-bottom:20px;}
+
+/* Why Choose Us */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.feature{
+  background:var(--white);padding:25px;border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.feature:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.feature h3{color:var(--orange);margin-bottom:10px;}
+
+/* Subjects */
+.subjects .grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;margin-top:25px;
+}
+.subject{
+  background:var(--white);padding:20px;border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.subject:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.subject h3{color:var(--orange);}
+
+/* Timings */
+.timings table{
+  width:100%;border-collapse:collapse;margin-top:25px;
+}
+.timings th,.timings td{
+  border:1px solid #ddd;padding:10px;text-align:center;
+}
+.timings th{background:var(--purple);color:white;}
+
+/* Testimonials */
+.testimonials{
+  background:var(--purple);color:white;
+  padding:60px 20px;border-radius:0;margin-top:60px;
+}
+.testimonial-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;margin-top:25px;
+}
+.testimonial{
+  background:rgba(255,255,255,0.15);
+  padding:20px;border-radius:10px;font-style:italic;
+}
+
+/* Contact */
+.contact{
+  background:var(--light);
+}
+form{
+  max-width:500px;margin:25px auto;text-align:left;
+}
+input,textarea{
+  width:100%;padding:10px;margin-bottom:12px;border-radius:6px;border:1px solid #ccc;
+}
+button[type="submit"]{
+  background:var(--orange);color:white;border:none;
+  padding:10px 20px;border-radius:6px;font-weight:600;cursor:pointer;transition:0.3s;
+}
+button[type="submit"]:hover{transform:scale(1.05);}
+
+/* Footer */
+footer{
+  text-align:center;padding:15px;background:#f1f1f1;color:#444;
+  font-size:0.9rem;
+}
+
+/* WhatsApp Floating */
+.whatsapp-float{
+  position:fixed;bottom:25px;right:25px;width:60px;height:60px;
+  background-color:#25d366;color:white;border-radius:50%;
+  text-align:center;font-size:30px;box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  z-index:100;transition:transform 0.3s;
+}
+.whatsapp-float:hover{transform:scale(1.1);}
+.whatsapp-float i{line-height:60px;}
+
+/* Responsive */
+@media(max-width:768px){
+  nav ul{
+    display:none;flex-direction:column;background:var(--white);
+    position:absolute;top:60px;right:20px;width:180px;border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  }
+  nav ul.active{display:flex;}
+  .menu-toggle{display:block;}
+  .toggle{display:none;}
+  .hero h1{font-size:1.9rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">Brain Bloom</div>
+  <button class="menu-toggle" id="menuBtn">☰</button>
+  <ul id="menuList">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="/courses.html">Subjects</a></li>
+    <li><a href="#timings">Batches</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="toggle" id="modeBtn">🌙 Dark Mode</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <h1>Empowering Students from Class 6 to 12</h1>
+  <p>Personalized tuition classes to build strong concepts, improve performance, and achieve top grades!</p>
+  <a href="#contact" class="btn">Book a Free Demo Class</a>
+</section>
+
+<!-- Why Choose Us -->
+<section id="why">
+  <h2>Why Choose 6 To 12 Guide?</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>📘 Concept Clarity</h3>
+      <p>We focus on building strong fundamentals in every subject, ensuring students truly understand concepts.</p>
+    </div>
+    <div class="feature">
+      <h3>🧠 Experienced Tutors</h3>
+      <p>Our educators specialize in handling students of all levels with patience and effective teaching strategies.</p>
+    </div>
+    <div class="feature">
+      <h3>📈 Regular Assessments</h3>
+      <p>Weekly tests and monthly progress reports to track improvement and boost exam confidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Subjects -->
+<section id="subjects" class="subjects">
+  <h2>Subjects We Teach</h2>
+  <div class="grid">
+    <div class="subject"><h3>Mathematics</h3><p>Logical learning with tricks and practice sheets for speed & accuracy.</p></div>
+    <div class="subject"><h3>Science</h3><p>Concept-based learning in Physics, Chemistry & Biology with experiments and examples.</p></div>
+    <div class="subject"><h3>English</h3><p>Grammar, comprehension, writing skills and vocabulary development.</p></div>
+    <div class="subject"><h3>Social Studies</h3><p>Interactive learning through stories, visuals and real-world examples.</p></div>
+  </div>
+</section>
+
+<!-- Timings -->
+<section id="timings" class="timings">
+  <h2>Class Timings & Batches</h2>
+  <p>Flexible batch options for all grades — weekday and weekend classes available.</p>
+  <table>
+    <tr><th>Class</th><th>Timing</th><th>Days</th></tr>
+    <tr><td>6th–8th</td><td>4:00 PM – 6:00 PM</td><td>Mon–Fri</td></tr>
+    <tr><td>9th–10th</td><td>6:00 PM – 8:00 PM</td><td>Mon–Fri</td></tr>
+    <tr><td>11th–12th</td><td>8:00 PM – 9:30 PM</td><td>Mon–Sat</td></tr>
+  </table>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Students & Parents Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial">"My daughter finally loves studying Maths! Highly recommend." – <b>Mrs. Sharma</b></div>
+    <div class="testimonial">"Best tuition in Mohali. Great teachers and interactive learning." – <b>Aman (Class 10)</b></div>
+    <div class="testimonial">"Weekly tests really helped me stay consistent and improve my marks." – <b>Riya (Class 9)</b></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Sec. 119, Garg House No. 29, Ward No.1, Gali No.2, Near Sun Tower, S.A.S Nagar, Mohali (160055)</p>
+  <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>© <span id="year"></span> 6 To 12 Guide — All Rights Reserved</footer>
+
+<a href="https://wa.me/919592549240?text=Hello!%20I%20want%20details%20about%20your%20tuition%20classes." class="whatsapp-float" target="_blank"><i>💬</i></a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// 🌙 Dark Mode
+const modeBtn=document.getElementById('modeBtn');
+modeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  modeBtn.textContent=document.body.classList.contains('dark')?'☀️ Light Mode':'🌙 Dark Mode';
+});
+
+// 📱 Mobile Menu
+const menuBtn=document.getElementById('menuBtn');
+const menuList=document.getElementById('menuList');
+menuBtn.addEventListener('click',()=>menuList.classList.toggle('active'));
+</script>
+</body>
+</html>

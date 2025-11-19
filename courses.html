@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses | Brain Bloom Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Navbar */
+nav {
+  position:sticky;top:0;
+  background:var(--white);
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 20px;z-index:100;
+}
+.logo {font-weight:700;font-size:1.4rem;color:var(--purple);}
+nav ul {display:flex;list-style:none;gap:20px;}
+nav ul li a {
+  color:var(--dark);text-decoration:none;font-weight:600;position:relative;
+}
+nav ul li a::after {
+  content:'';position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--orange);transition:width 0.3s;
+}
+nav ul li a:hover::after {width:100%;}
+
+.menu-toggle{display:none;font-size:26px;color:var(--purple);background:none;border:none;cursor:pointer;}
+.toggle{
+  background:var(--orange);color:white;border:none;
+  padding:8px 14px;border-radius:20px;cursor:pointer;
+  font-weight:600;transition:transform 0.3s;
+}
+.toggle:hover{transform:scale(1.05);}
+:root {
+  --purple: #6C63FF;
+  --orange: #FF9800;
+  --light: #f9f9fb;
+  --dark: #1A1A1A;
+  --white: #ffffff;
+}
+body.dark {
+  --light: #181818;
+  --white: #222;
+  --dark: #f9f9fb;
+}
+
+* {box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
+body {
+  font-family:'Poppins',sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  transition:background 0.4s,color 0.4s;
+}
+nav{position:sticky;top:0;background:var(--white);box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    display:flex;justify-content:space-between;align-items:center;padding:12px 40px;z-index:99;}
+nav .logo{font-size:1.4rem;font-weight:700;color:var(--purple);}
+nav ul{display:flex;gap:20px;list-style:none;}
+nav ul li a{text-decoration:none;color:var(--dark);font-weight:600;position:relative;}
+nav ul li a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--orange);transition:width 0.3s;}
+nav ul li a:hover::after{width:100%;}
+header{background:linear-gradient(rgba(108,99,255,0.85),rgba(108,99,255,0.85)),
+url('https://images.unsplash.com/photo-1584697964154-bc35f2d4d76e?auto=format&fit=crop&w=1500&q=80') center/cover;
+color:white;text-align:center;padding:90px 20px;}
+header h1{font-size:2.5rem;}
+.grid{max-width:1100px;margin:60px auto;padding:0 20px;display:grid;gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.card{background:var(--white);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);
+padding:25px;text-align:center;transition:transform 0.3s,box-shadow 0.3s;}
+.card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.card h3{color:var(--orange);margin-bottom:10px;}
+.card p{font-size:0.95rem;}
+footer{text-align:center;padding:15px;background:#f1f1f1;color:#444;font-size:0.9rem;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Brain Bloom</div>
+  <button class="menu-toggle" id="menuBtn">☰</button>
+  <ul id="menuList">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="/courses.html">Subjects</a></li>
+    <li><a href="#timings">Batches</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="toggle" id="modeBtn">🌙 Dark Mode</button>
+</nav>
+
+<header>
+  <h1>Our Courses</h1>
+  <p>Comprehensive coaching programs for Classes 6th to 12th</p>
+</header>
+
+<section class="grid">
+  <div class="card">
+    <h3>Classes 6–8</h3>
+    <p>All subjects foundation building with focus on conceptual understanding.</p>
+  </div>
+  <div class="card">
+    <h3>Classes 9–10</h3>
+    <p>Maths, Science, English & SST. Regular tests and board preparation.</p>
+  </div>
+  <div class="card">
+    <h3>11–12 Science (Non-Medical)</h3>
+    <p>Physics, Chemistry, Maths — CBSE & competitive exam prep.</p>
+  </div>
+  <div class="card">
+    <h3>11–12 Medical</h3>
+    <p>Physics, Chemistry, Biology — NEET & board exam focus.</p>
+  </div>
+  <div class="card">
+    <h3>11–12 Commerce</h3>
+    <p>Accountancy, Economics, Business Studies with case-based practice.</p>
+  </div>
+  <div class="card">
+    <h3>Humanities</h3>
+    <p>Political Science, History, Sociology, Psychology — concept-based study.</p>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Brain Bloom Academy — Courses
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// 🌙 Dark Mode
+const modeBtn=document.getElementById('modeBtn');
+modeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  modeBtn.textContent=document.body.classList.contains('dark')?'☀️ Light Mode':'🌙 Dark Mode';
+});
+
+// 📱 Mobile Menu
+const menuBtn=document.getElementById('menuBtn');
+const menuList=document.getElementById('menuList');
+menuBtn.addEventListener('click',()=>menuList.classList.toggle('active'));
+</script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
